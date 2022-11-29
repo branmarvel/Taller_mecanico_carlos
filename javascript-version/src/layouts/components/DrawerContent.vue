@@ -40,6 +40,30 @@ const upgradeBanner = computed(() => {
         icon: { icon: 'mdi-home-outline' }
       }"
     />
+    
+    <VerticalNavLink
+      :item="{
+        title: 'Clientes',
+        to: 'clientes',
+        icon: { icon: 'mdi-credit-card-outline' }
+      }"
+    />
+
+    <VerticalNavLink
+      :item="{
+        title: 'Inventario',
+        to: 'inventario',
+        icon: { icon: 'mdi-box-variant-closed' }
+      }"
+    />
+   
+    <VerticalNavLink
+      :item="{
+        title: 'Servicio',
+        to: 'servicio',
+        icon: { icon: 'mdi-car-wrench' }
+      }"
+    />
     <VerticalNavLink
       :item="{
         title: 'Configuracion',
@@ -67,69 +91,66 @@ const upgradeBanner = computed(() => {
     />
 
     <!-- ℹ️ This path doesn't exist so 404 route will catch this undefined path -->
-    <!-- <VerticalNavLink
+    <!--
+      <VerticalNavLink
       :item="{
-        title: 'Error',
-        to: { path: '/error' },
-        target: '_blank',
-        icon: { icon: 'mdi-alert-circle-outline' }
+      title: 'Error',
+      to: { path: '/error' },
+      target: '_blank',
+      icon: { icon: 'mdi-alert-circle-outline' }
       }"
-    /> -->
+      /> 
+    -->
 
     <!-- 👉 User Interface -->
     <VerticalNavSectionTitle :item="{ heading: 'User Interface' }" />
     
 
-    <VerticalNavLink
+ 
+    <!--     
+      <VerticalNavLink
       :item="{
-        title: 'Clientes',
-        to: 'card-basic',
-        icon: { icon: 'mdi-credit-card-outline' }
+      title: 'Typography',
+      to: 'typography',
+      icon: { icon: 'mdi-alpha-t-box-outline' }
       }"
-    />
-<!--     
-    <VerticalNavLink
+      />
+      <VerticalNavLink
       :item="{
-        title: 'Typography',
-        to: 'typography',
-        icon: { icon: 'mdi-alpha-t-box-outline' }
+      title: 'Typography',
+      to: 'typography',
+      icon: { icon: 'mdi-alpha-t-box-outline' }
       }"
-    />
-    <VerticalNavLink
+      />
+      <VerticalNavLink
       :item="{
-        title: 'Typography',
-        to: 'typography',
-        icon: { icon: 'mdi-alpha-t-box-outline' }
+      title: 'Icons',
+      to: 'icons',
+      icon: { icon: 'mdi-eye-outline' }
       }"
-    />
-    <VerticalNavLink
+      />
+      <VerticalNavLink
       :item="{
-        title: 'Icons',
-        to: 'icons',
-        icon: { icon: 'mdi-eye-outline' }
+      title: 'Cards',
+      to: 'card-basic',
+      icon: { icon: 'mdi-credit-card-outline' }
       }"
-    />
-    <VerticalNavLink
+      />
+      <VerticalNavLink
       :item="{
-        title: 'Cards',
-        to: 'card-basic',
-        icon: { icon: 'mdi-credit-card-outline' }
+      title: 'Tables',
+      to: 'tables',
+      icon: { icon: 'mdi-table' }
       }"
-    />
-    <VerticalNavLink
+      />
+      <VerticalNavLink
       :item="{
-        title: 'Tables',
-        to: 'tables',
-        icon: { icon: 'mdi-table' }
+      title: 'Form Layouts',
+      to: 'form-layouts',
+      icon: { icon: 'mdi-form-select' }
       }"
-    />
-    <VerticalNavLink
-      :item="{
-        title: 'Form Layouts',
-        to: 'form-layouts',
-        icon: { icon: 'mdi-form-select' }
-      }"
-    /> -->
+      /> 
+    -->
   </ul>
 </template>
 
