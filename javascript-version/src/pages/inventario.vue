@@ -3,9 +3,9 @@ const data = [
   {
     responsiveId: '',
     id: 95,
-    fullName: 'Edwina Ebsworth',
-    post: 'Human Resources Assistant',
-    email: 'eebsworth2m@sbwire.com',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Puzi',
     start_date: '09/27/2018',
     salary: 19586.23,
@@ -16,9 +16,9 @@ const data = [
   {
     responsiveId: '',
     id: 1,
-    fullName: 'Korrie O\'Crevy',
-    post: 'Nuclear Power Engineer',
-    email: 'kocrevy0@thetimes.co.uk',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Krasnosilka',
     start_date: '09/23/2016',
     salary: 23896.35,
@@ -29,9 +29,9 @@ const data = [
   {
     responsiveId: '',
     id: 7,
-    fullName: 'Eileen Diehn',
-    post: 'Environmental Specialist',
-    email: 'ediehn6@163.com',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Lampuyang',
     start_date: '10/15/2017',
     salary: 18991.67,
@@ -42,9 +42,9 @@ const data = [
   {
     responsiveId: '',
     id: 11,
-    fullName: 'De Falloon',
-    post: 'Sales Representative',
-    email: 'dfalloona@ifeng.com',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Colima',
     start_date: '06/12/2018',
     salary: 19252.12,
@@ -55,9 +55,9 @@ const data = [
   {
     responsiveId: '',
     id: 3,
-    fullName: 'Stella Ganderton',
-    post: 'Operator',
-    email: 'sganderton2@tuttocitta.it',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Golcowa',
     start_date: '03/24/2018',
     salary: 13076.28,
@@ -68,9 +68,9 @@ const data = [
   {
     responsiveId: '',
     id: 5,
-    fullName: 'Harmonia Nisius',
-    post: 'Senior Cost Accountant',
-    email: 'hnisius4@gnu.org',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Lucan',
     start_date: '08/25/2017',
     salary: 10909.52,
@@ -81,9 +81,9 @@ const data = [
   {
     responsiveId: '',
     id: 6,
-    fullName: 'Genevra Honeywood',
-    post: 'Geologist',
-    email: 'ghoneywood5@narod.ru',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Maofan',
     start_date: '06/01/2017',
     salary: 17803.8,
@@ -94,38 +94,40 @@ const data = [
   {
     responsiveId: '',
     id: 4,
-    fullName: 'Dorolice Crossman',
-    post: 'Cost Accountant',
-    email: 'dcrossman3@google.co.jp',
+fullName: 'Pieza',
+    post: 'Toyota',
+email: 'DPR8EA9',
     city: 'Paquera',
     start_date: '12/03/2017',
     salary: 12336.17,
     age: '22',
     experience: '2 Years',
-    status: 2,
+    status: 3,
   },
 ]
 const status = {
-  1: 'Current',
-  2: 'Professional',
-  3: 'Rejected',
-  4: 'Resigned',
-  5: 'Applied',
+  1: 'Herramientas',
+  2: 'Bujias',
+  3: 'Cauchos',
+  4: 'Pinturas',
+  5: 'Ruedas',
 }
 const statusColor = {
-  Current: 'primary',
-  Professional: 'success',
-  Rejected: 'error',
-  Resigned: 'warning',
-  Applied: 'info',
+  Herramientas: 'primary',
+  Bujias: 'success',
+  Cauchos: 'error',
+  Pinturas: 'warning',
+  Ruedas: 'info',
 }
 const headers = [
   'Producto',
-  'Cantidad',
+  'Modelo',
+  'Fecha Comprado',
   'Precio',
-  'Estado',
+  'Precio por servicio',
+  'Cantidad',
+  'Descripción',
   'Categoria',
-  'Nose',
 ]
 const usreList = data
 </script>
@@ -168,7 +170,10 @@ const usreList = data
           <td v-text="row.email" />
           <td v-text="row.start_date" />
           <td v-text="`$${row.salary}`" />
+          <td></td>
           <td v-text="row.age" />
+          
+          <td></td>
           <!-- status -->
           <td>
             <VChip
