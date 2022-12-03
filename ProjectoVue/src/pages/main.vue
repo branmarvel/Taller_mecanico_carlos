@@ -9,6 +9,7 @@ import pages2 from '@/assets/images/pages/2.jpg'
 import pages3 from '@/assets/images/pages/3.jpg'
 import pages5 from '@/assets/images/pages/5.jpg'
 import pages6 from '@/assets/images/pages/6.jpg'
+import axios from 'axios'
 
 const avatars = [
   avatar1,
@@ -17,6 +18,48 @@ const avatars = [
   avatar4,
 ]
 const isCardDetailsVisible = ref(false)
+
+const { reactive, toRefs, computed, onMounted } = Vue
+const { axioss } = axios
+const app = Vue.createApp({
+  setup() {
+    const state = reactive({
+      pokemons: [],
+      filteredPokemon: computed(() => updatePokemon()),
+      text: "",
+      urlIdLookup: {},
+    })
+
+    const fetchPokemon = () => {
+      axios
+        .get("https://pokeapi.co/api/v2/pokemon?offset=0")
+        .then(response => {
+          state.pokemons = response.data.results // 👈 get just results
+        })
+    }
+
+    fetchPokemon()
+
+    // 👇 function to get index
+    const getPokemonId = item => {
+      return state.pokemons.findIndex(p => p.name === item)
+    }
+
+    function updatePokemon() {
+      if (!state.text) {
+        return []
+      }
+      
+      return state.pokemons.filter(pokemon =>
+        pokemon.name.includes(state.text),
+      )
+    }
+
+    // 👇 return new function
+    return { ...toRefs(state), fetchPokemon, updatePokemon, getPokemonId }
+  },
+})
+app.mount('#demo')
 </script>
 
 <template>
@@ -77,7 +120,9 @@ const isCardDetailsVisible = ref(false)
         />
 
         <VCardItem>
-          <VCardTitle> Servicios</VCardTitle>
+          <VCardTitle>
+            Servicios
+          </VCardTitle>
         </VCardItem>
 
         <VCardText>
@@ -87,6 +132,7 @@ const isCardDetailsVisible = ref(false)
     </VCol>
   </VRow>
 </template>
+
 
 <style lang="scss" scoped>
 .avatar-center {
@@ -108,3 +154,4 @@ const isCardDetailsVisible = ref(false)
   }
 }
 </style>
+
