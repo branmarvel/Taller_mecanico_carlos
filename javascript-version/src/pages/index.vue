@@ -9,6 +9,7 @@ import pages2 from '@/assets/images/pages/2.jpg'
 import pages3 from '@/assets/images/pages/3.jpg'
 import pages5 from '@/assets/images/pages/5.jpg'
 import pages6 from '@/assets/images/pages/6.jpg'
+import axios from 'axios'
 
 const avatars = [
   avatar1,
@@ -17,6 +18,11 @@ const avatars = [
   avatar4,
 ]
 const isCardDetailsVisible = ref(false)
+
+axios.get('http://127.0.0.1:8000/api/persona/?format=api')
+  .then(function (response) {
+    console.log(response.nombre)
+  }).catch(function error(e){console.log})
 </script>
 
 <template>
@@ -77,7 +83,9 @@ const isCardDetailsVisible = ref(false)
         />
 
         <VCardItem>
-          <VCardTitle> Servicios</VCardTitle>
+          <VCardTitle>
+            Servicios
+          </VCardTitle>
         </VCardItem>
 
         <VCardText>
@@ -87,6 +95,7 @@ const isCardDetailsVisible = ref(false)
     </VCol>
   </VRow>
 </template>
+
 
 <style lang="scss" scoped>
 .avatar-center {
@@ -108,3 +117,4 @@ const isCardDetailsVisible = ref(false)
   }
 }
 </style>
+

@@ -8,9 +8,13 @@ import '@/styles/styles.scss'
 import '@core/scss/index.scss'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
+import VueAxios from "vue-axios"
+import axios from "./plugins/axios"
 loadFonts()
 const app = createApp(App)
 app.use(vuetify)
 app.use(createPinia())
 app.use(router)
 app.mount('#app')
+app.use(VueAxios, axios)
+app.provide("axios", app.config.globalProperties.axios)
