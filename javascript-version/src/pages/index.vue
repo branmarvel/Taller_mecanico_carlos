@@ -19,10 +19,47 @@ const avatars = [
 ]
 const isCardDetailsVisible = ref(false)
 
-axios.get('http://127.0.0.1:8000/api/persona/?format=api')
-  .then(function (response) {
-    console.log(response.nombre)
-  }).catch(function error(e){console.log})
+const { reactive, toRefs, computed, onMounted } = Vue
+const { axioss } = axios
+const app = Vue.createApp({
+  setup() {
+    const state = reactive({
+      pokemons: [],
+      filteredPokemon: computed(() => updatePokemon()),
+      text: "",
+      urlIdLookup: {},
+    })
+
+    const fetchPokemon = () => {
+      axios
+        .get("https://pokeapi.co/api/v2/pokemon?offset=0")
+        .then(response => {
+          state.pokemons = response.data.results // 👈 get just results
+        })
+    }
+
+    fetchPokemon()
+
+    // 👇 function to get index
+    const getPokemonId = item => {
+      return state.pokemons.findIndex(p => p.name === item)
+    }
+
+    function updatePokemon() {
+      if (!state.text) {
+        return []
+      }
+      
+      return state.pokemons.filter(pokemon =>
+        pokemon.name.includes(state.text),
+      )
+    }
+
+    // 👇 return new function
+    return { ...toRefs(state), fetchPokemon, updatePokemon, getPokemonId }
+  },
+})
+app.mount('#demo')
 </script>
 
 <template>
