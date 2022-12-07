@@ -1,195 +1,103 @@
-<script setup>
-const data = [
-  {
-    responsiveId: '',
-    id: 95,
-    fullName: 'Edwina Ebsworth',
-    post: 'Human Resources Assistant',
-    email: 'eebsworth2m@sbwire.com',
-    city: 'Puzi',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '2 Years',
-    status: 1,
-    button: ` <v-btn
-  icon="mdi-pencil-box-multiple-outline"
-  variant="text"
-/>`
-  },
-  {
-    responsiveId: '',
-    id: 1,
-    fullName: 'Korrie O\'Crevy',
-    post: 'Nuclear Power Engineer',
-    email: 'kocrevy0@thetimes.co.uk',
-    city: 'Krasnosilka',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '1 Year',
-    status: 2,
-  },
-  {
-    responsiveId: '',
-    id: 7,
-    fullName: 'Eileen Diehn',
-    post: 'Environmental Specialist',
-    email: 'ediehn6@163.com',
-    city: 'Lampuyang',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '9 Years',
-    status: 3,
-  },
-  {
-    responsiveId: '',
-    id: 11,
-    fullName: 'De Falloon',
-    post: 'Sales Representative',
-    email: 'dfalloona@ifeng.com',
-    city: 'Colima',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '0 Year',
-    status: 4,
-  },
-  {
-    responsiveId: '',
-    id: 3,
-    fullName: 'Stella Ganderton',
-    post: 'Operator',
-    email: 'sganderton2@tuttocitta.it',
-    city: 'Golcowa',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '6 Years',
-    status: 5,
-  },
-  {
-    responsiveId: '',
-    id: 5,
-    fullName: 'Harmonia Nisius',
-    post: 'Senior Cost Accountant',
-    email: 'hnisius4@gnu.org',
-    city: 'Lucan',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '3 Years',
-    status: 2,
-  },
-  {
-    responsiveId: '',
-    id: 6,
-    fullName: 'Genevra Honeywood',
-    post: 'Geologist',
-    email: 'ghoneywood5@narod.ru',
-    city: 'Maofan',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '1 Year',
-    status: 1,
-  },
-  {
-    responsiveId: '',
-    id: 4,
-    fullName: 'Dorolice Crossman',
-    post: 'Cost Accountant',
-    email: 'dcrossman3@google.co.jp',
-    city: 'Paquera',
-    start_date: 'v-11222333',
-    salary: '04121112233',
-    age: 'Lidice',
-    experience: '2 Years',
-    status: 2,
-  },
-]
-const status = {
-  1: 'Procesando',
-  2: 'Entregado',
-  3: 'Rejected',
-  4: 'Resigned',
-  5: 'Applied',
-}
-const statusColor = {
-  Procesando: 'primary',
-  Entregado: 'success',
-  Rejected: 'error',
-  Resigned: 'warning',
-  Applied: 'info',
-}
-const headers = [
-  'Nombre completo',
-  'Identificacion',
-  'Email',
-  'Telefono',
-  'Dirección',
-  'Botones',
-]
-const usreList = data
-</script>
 
 <template>
   <VCard>
-    <VTable
-      :headers="headers"
-      :items="usreList"
-      item-key="fullName"
-      class="table-rounded"
-      hide-default-footer
-      disable-sort
-    >
-      <thead>
-        <tr>
-          <th
-            v-for="header in headers"
-            :key="header"
-          >
-            {{ header }}
-          </th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr
-          v-for="row in data"
-          :key="row.fullName"
-        >
-          <!-- name -->
-
-          <td>
-            <div class="d-flex flex-column">
-              <span class="d-block font-weight-semibold text--primary text-truncate">{{ row.fullName }}</span>
-              <small>{{ row.post }}</small>
-            </div>
-          </td>
-
-          
-          <td v-text="row.start_date" />
-          <td v-text="row.email" />
-          <td v-text="row.salary" />
-          <td v-text="row.age" />
-          <td><v-btn to=""
-  icon="mdi-pencil-box-multiple-outline"
-  variant="text"
-/></td>
-          <!-- status -->
-          <!-- <td>
-            <VChip
-              small
-              :color="statusColor[status[row.status]]"
-              class="font-weight-medium"
-            >
-              {{ status[row.status] }}
-            </VChip>
-          </td> -->
-        </tr>
-      </tbody>
+    <VTable>
+      <div class="tablaPerson">
+       <table class="table">
+           <thead class="thead-dark">
+                  <tr id="th">
+                      <th class="th">Nombre</th>
+                      <th class="th">Apellido</th>
+                      <th class="th">cedula</th>
+                      <th class="th">Fecha de creacion</th>
+                      <td>Editar</td>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr id="td" v-for="persona in persona" :key="persona.nombre">
+                      <td class="td text">{{persona.nombre}}</td>
+                      <td class="td text">{{persona.apellido}}</td>
+                      <td class="td text">{{persona.cedula}}</td>
+                      <td class="td text">{{persona.fecha_creado}}</td>
+                      <td>Editar</td>
+                  </tr>
+            </tbody>
+        </table>
+      </div>
     </VTable>
   </VCard>
 </template>
+
+<script>
+import eCommerce2 from '@/assets/images/eCommerce/2.png'
+import axios from "axios"
+import {ref} from "vue" 
+
+const API_URL = "http://127.0.0.1:8000/api"
+export default{
+  data() {
+    return {
+      name: "",
+      persona: {
+  
+      },
+    }
+  },
+  created() {
+    this.obtenerDatosAPIMundos()
+  },
+  methods: {
+    obtenerDatosAPIMundos() {
+      axios
+        .get(API_URL + "/persona/" + this.name)
+        .then(res => {
+          this.persona = res.data
+        })
+        .catch(e => {
+          console.log(e)
+        })
+    },
+  },
+}
+</script>
+<style lang="scss">
+.tablaPerson{
+  font-family: 'Rock Salt', cursive;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+}
+.text{
+  color: white;
+}
+.table {
+   
+   width: 100%;
+   border: 1px solid #000;
+}
+.th{
+   width: 25%;
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+   caption-side: bottom;
+}
+.td{
+  width: 25%;
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+   caption-side: bottom;
+}
+
+.th {
+   background: #eee;
+}
+</style>

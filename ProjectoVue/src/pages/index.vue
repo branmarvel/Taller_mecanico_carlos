@@ -1,15 +1,50 @@
-<script setup>
-import avatar1 from '@/assets/images/avatars/avatar-1.png'
-import avatar2 from '@/assets/images/avatars/avatar-2.png'
-import avatar3 from '@/assets/images/avatars/avatar-3.png'
-import avatar4 from '@/assets/images/avatars/avatar-4.png'
+<!-- <script>
 import eCommerce2 from '@/assets/images/eCommerce/2.png'
+import axios from "axios"
+import {ref} from "vue" 
+
+const API_URL = "http://127.0.0.1:8000/api"
+export default{
+  setup(){
+   
+  },
+  data() {
+    return {
+      name: "",
+      persona: {
+        nombre: "",
+        apellido: "",
+      },
+    }
+  },
+  created() {
+    this.obtenerDatosAPIMundos()
+  },
+  methods: {
+    obtenerDatosAPIMundos() {
+      axios
+        .get(API_URL + "/persona/" + this.name)
+        .then(res => {
+          this.persona = res.data
+        })
+        .catch(e => {
+          console.log(e)
+        })
+    },
+  },
+}
+</script> -->
+
+<script setup>
 import pages1 from '@/assets/images/pages/1.jpg'
 import pages2 from '@/assets/images/pages/2.jpg'
 import pages3 from '@/assets/images/pages/3.jpg'
 import pages5 from '@/assets/images/pages/5.jpg'
 import pages6 from '@/assets/images/pages/6.jpg'
-
+import avatar1 from '@/assets/images/avatars/avatar-1.png'
+import avatar2 from '@/assets/images/avatars/avatar-2.png'
+import avatar3 from '@/assets/images/avatars/avatar-3.png'
+import avatar4 from '@/assets/images/avatars/avatar-4.png'
 const avatars = [
   avatar1,
   avatar2,

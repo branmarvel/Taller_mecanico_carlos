@@ -64,13 +64,7 @@ const upgradeBanner = computed(() => {
         icon: { icon: 'mdi-car-wrench' }
       }"
     />
-    <VerticalNavLink
-      :item="{
-        title: 'Configuracion',
-        to: 'account-settings',
-        icon: { icon: 'mdi-account-cog-outline' }
-      }"
-    />
+   
     <!-- 👉 Pages -->
     <VerticalNavSectionTitle :item="{ heading: 'Pages' }" />
     <VerticalNavLink

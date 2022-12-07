@@ -13,6 +13,8 @@
         "@casl/vue": "^2.2.0",
         "@floating-ui/dom": "1.0.0",
         "@mdi/font": "^7.0.96",
+        "@vue/composition-api": "^1.7.1",
+        "@vueblocks/vue-use-axios": "^0.2.11",
         "@vueuse/core": "^8.9.4",
         "apexcharts-clevision": "^3.28.5",
         "axios": "^0.27.2",
