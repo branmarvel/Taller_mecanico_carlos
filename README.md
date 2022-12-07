@@ -1,5 +1,5 @@
 # Taller_mecanico_carlos
-Requerimentos:
+**Requerimientos:**
  	node version: v17.0.1
  	npm version: 8.19.2
  	vue version: @vue/cli 5.0.8
@@ -11,9 +11,9 @@ Requerimentos:
  	djangorestframework: 3.14.0
  	django-cors-headers: 3.13.0
 
-Procesos de instalacion
+## Procesos de instalación
  Directorio ProjectoVue
- Instalacion del vue
+ **Instalación del vue**
  	instalacion de los paquetes
   		yarn
   		npm install [si es npm]
@@ -27,7 +27,7 @@ Procesos de instalacion
   		npm run build [si es npm]
 
 Directorio ProjectoDjango/bdd/
- Instalacion del django
+** Instalación del Django**
  	Instalar las dependencias
   		pip install djangorestframework
   		pip install django-cors-headers
@@ -36,5 +36,5 @@ Directorio ProjectoDjango/bdd/
  	Iniciar servidor
   		python manage.py runserver
 
-instalacion de la base de datos
- importar archivo "base de datos taller" en mysql en el phpmyadmin con el xamp abierto
+**Instalación de la base de datos**
+ Importar archivo "base de datos taller" en mysql en el phpmyadmin con el xamp abierto
