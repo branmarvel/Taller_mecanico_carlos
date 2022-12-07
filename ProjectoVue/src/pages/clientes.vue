@@ -8,7 +8,7 @@
                   <tr id="th">
                       <th class="th">Nombre</th>
                       <th class="th">Apellido</th>
-                      <th class="th">cedula</th>
+                      <th class="th">Cedula</th>
                       <th class="th">Fecha de creacion</th>
                       <td>Editar</td>
                   </tr>
@@ -63,9 +63,8 @@ export default{
 </script>
 <style lang="scss">
 .tablaPerson{
-  font-family: 'Rock Salt', cursive;
+  font-family: 'Rock Salt';
   padding: 20px;
-  font-style: italic;
   caption-side: bottom;
   color: #666;
   text-align: right;
