@@ -49,7 +49,7 @@ export default{
   methods: {
     obtenerDatosAPIMundos() {
       axios
-        .get(API_URL + "/persona/" + this.name)
+        .get(API_URL + "/persona/")
         .then(res => {
           this.persona = res.data
         })

@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 import eCommerce2 from '@/assets/images/eCommerce/2.png'
 import axios from "axios"
 import {ref} from "vue" 
@@ -33,7 +33,7 @@ export default{
     },
   },
 }
-</script> -->
+</script>
 
 <script setup>
 import pages1 from '@/assets/images/pages/1.jpg'
@@ -55,6 +55,7 @@ const isCardDetailsVisible = ref(false)
 </script>
 
 <template>
+  <h1> {{persona}} </h1>
   <VRow>
     <!-- 👉 CARD -->
     <VCol
