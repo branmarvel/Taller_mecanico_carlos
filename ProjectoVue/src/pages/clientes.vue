@@ -19,6 +19,7 @@
                       <td class="td text">{{persona.apellido}}</td>
                       <td class="td text">{{persona.cedula}}</td>
                       <td class="td text">{{persona.fecha_creado}}</td>
+
                       <td>Editar</td>
                   </tr>
             </tbody>
